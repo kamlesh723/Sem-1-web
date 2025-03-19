@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Showcase</title>
+    
+    <style type="text/css">
+     
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7eb3, #ffcc70);
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .home-link {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: #ffcc70;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        .book-list {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        /* Flip Container */
+        .book {
+            width: 200px;
+            height: 300px;
+            perspective: 1000px; /* Adds 3D effect */
+        }
+
+        .book-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .book:hover .book-inner {
+            transform: rotateY(180deg);
+        }
+
+        .book-front,
+        .book-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-back {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(180deg);
+        }
+
+        .book-back p {
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .book-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .book {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Book Showcase</h1>
+        <a href="index.html" class="home-link">Home</a>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2>Explore Books</h2>
+        <div class="book-list">
+            <!-- Book 1 -->
+            <div class="book">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <a href="book1.html">
+                        <img src="public/image/book1.webp" alt="Manufacturing Engineering and Technology">
+                    </a>
+                    </div>
+                    <div class="book-back">
+                        <a href="book1.html">
+                            <p>Click for Details</p>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="book">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="public/image/book2.webp" alt="50 Revolutionary Inventions">
+                    </div>
+                    <div class="book-back">
+                        <a href="book2.html">
+                        <p>Click for Details</p>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="book">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="public/image/book3.webp" alt="Making Sense of Mindfulness">
+                    </div>
+                    <div class="book-back">
+                        <a href="book3.html">
+                        <p>Click for Details</p>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        © 2025 Book Showcase | All rights reserved
+    </footer>
+
+</body>
+</html>
